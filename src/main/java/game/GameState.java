@@ -1,0 +1,12 @@
+package mvc;
+
+public enum GameState {
+    WAITING_FOR_DRAW,
+    WAITING_FOR_ROUND_START,
+    WAITING_FOR_GAME_INIT,
+    GAME_STARTED,
+    WAITING_FOR_DRAW_END,
+    PLAYER_WIN,
+    DEALER_WIN,
+    TIE
+}
