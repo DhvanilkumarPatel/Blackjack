@@ -1,4 +1,4 @@
-package mvc;
+package game;
 
 public enum GameState {
     WAITING_FOR_DRAW,

@@ -1,4 +1,4 @@
-package mvc;
+package game;
 
 import player.Player;
 import view.GameView;
@@ -27,24 +27,8 @@ public class GameController {
         return view.getBet(money);
     }
 
-    public boolean startRound() {
-        return view.startRound();
-    }
-
-    public void updateDealerDeck() {
-
-    }
-
-    public void updatePlayerDeck() {
-
-    }
-
-    public void requestPlayerAceValue() {
-
-    }
-
-    public void requestHumanAceValue() {
-
+    public boolean startRound(int money) {
+        return view.startRound(money);
     }
 
     public boolean getHumanDrawDecision() {
@@ -55,8 +39,5 @@ public class GameController {
         return view.getHumanAceDecision();
     }
 
-    public void drawCard() {
-
-    }
 
 }

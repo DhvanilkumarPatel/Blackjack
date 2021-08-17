@@ -1,9 +1,10 @@
-package view;
+package view.commandLineView;
 
 import cards.Card;
 import cards.Deck;
-import mvc.GameState;
+import game.GameState;
 import player.Player;
+import view.GameView;
 
 import java.util.Scanner;
 
@@ -66,7 +67,7 @@ public class CommandLineView extends GameView {
         return scanner.nextInt();
     }
 
-    public boolean startRound() {
+    public boolean startRound(int money) {
         System.out.println("Start game?");
         return scanner.nextBoolean();
     }

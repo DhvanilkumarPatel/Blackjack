@@ -1,4 +1,4 @@
-package mvc;
+package game;
 
 import cards.Deck;
 import player.Player;
@@ -38,9 +38,9 @@ public class GameModel {
         }
     }
 
-    public boolean singleRound() {
+    private boolean singleRound() {
         state = GameState.WAITING_FOR_ROUND_START;
-        if (!controller.startRound()) return false;
+        if (!controller.startRound(player.getMoney())) return false;
 
         int bet = getBet();
         GameResult result = startGame();
@@ -50,7 +50,7 @@ public class GameModel {
         return true;
     }
 
-    public GameResult startGame() {
+    private GameResult startGame() {
         if (dealer == null || player == null) {
             System.err.println("GameModel: Game started without players initialized");
             throw new NullPointerException();
@@ -130,7 +130,11 @@ public class GameModel {
     }
 
     public int getBet() {
-        return controller.getBet(player.getMoney());
+        int bet = 0;
+        while (bet <= 0 || bet > player.getMoney()) {
+            bet = controller.getBet(player.getMoney());
+        }
+        return bet;
     }
 
     public void setController(GameController controller) {

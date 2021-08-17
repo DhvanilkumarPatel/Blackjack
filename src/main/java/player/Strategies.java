@@ -1,2 +1,6 @@
-package player;public enum Strategies {
+package player;
+
+public enum Strategies {
+    Human,
+    Bot
 }
